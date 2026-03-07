@@ -34,9 +34,6 @@ p{margin-bottom:30px;color:#555;font-size:18px;line-height:1.6;}
 button{background:#25D366;color:#fff;border:none;padding:15px 25px;font-size:18px;border-radius:10px;cursor:pointer;}
 button:hover{background:#1ebe5d;}
 
-/* Banner */
-.banner img{width:100%;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.2);margin-bottom:20px;}
-
 /* Product gallery */
 .product-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:20px;}
 .product-gallery img{width:100%;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);cursor:pointer;transition:transform 0.3s;}
@@ -68,17 +65,17 @@ button:hover{background:#1ebe5d;}
 .testimonials-controls button{background:#25D366;color:#fff;border:none;padding:5px 12px;margin:0 5px;border-radius:8px;cursor:pointer;}
 .testimonials-controls button:hover{background:#1ebe5d;}
 
+/* Floating WhatsApp button */
+#floatWA{
+position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#25D366;border-radius:50%;box-shadow:0 5px 15px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;animation:float 2s infinite;}
+#floatWA img{width:35px;height:35px;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 @media(max-width:768px){.blog-left-right{flex-direction:column;}.blog-left-right img{width:100%;}.product-gallery{grid-template-columns:1fr;}.testimonial-card{flex:0 0 90%;}}
 </style>
 </head>
 <body>
 
 <div class="container">
-
-<!-- LV Banner -->
-<div class="banner">
-<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-neverfull-mm--M46975_PM2_Front%20view.jpg" alt="LV Banner">
-</div>
 
 <div class="avatar">H</div>
 <h1>We Are a Factory with 15 Years of Experience 🥰</h1>
@@ -120,8 +117,12 @@ button:hover{background:#1ebe5d;}
 <button id="nextBtn">&#8594;</button>
 </div>
 </div>
+
 </div>
 
+<!-- Floating WhatsApp Button -->
+<div id="floatWA" onclick="goWA()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </div>
 
 <script>
