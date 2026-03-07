@@ -40,14 +40,15 @@ button:hover{background:#1ebe5d;}
 .product-gallery img:hover{transform:scale(1.05);}
 
 /* Blog layout */
-.blog-left-right{display:flex;gap:20px;margin-top:20px;align-items:center;}
+.blog-left-right{display:flex;gap:20px;margin-top:20px;align-items:center;opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
+.blog-left-right.visible{opacity:1;transform:translateY(0);}
 .blog-left-right img{width:300px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.5s, box-shadow 0.5s, filter 0.5s;}
 .blog-left-right img:hover{transform: scale(1.08) rotate(1deg); box-shadow:0 10px 25px rgba(0,0,0,0.2); filter:brightness(1.05);}
 .blog-text{flex:1;text-align:left;}
 .blog-text h3{margin-top:0;}
 .blog-text p{color:#555;font-size:15px;}
-.blog-text button.cta-btn{background:#FF6B6B;color:white;border:none;padding:10px 18px;border-radius:10px;cursor:pointer;margin-top:10px;font-weight:bold;transition:background 0.3s;}
-.blog-text button.cta-btn:hover{background:#ff3b3b;}
+.blog-text button.cta-btn{background:#FF6B6B;color:white;border:none;padding:10px 18px;border-radius:10px;cursor:pointer;margin-top:10px;font-weight:bold;transition:all 0.3s;}
+.blog-text button.cta-btn:hover{background:#ff3b3b;transform:scale(1.05);}
 
 /* Info section */
 .info-section{text-align:left;margin-top:30px;}
@@ -65,7 +66,7 @@ button:hover{background:#1ebe5d;}
 .testimonials-controls button{background:#25D366;color:#fff;border:none;padding:5px 12px;margin:0 5px;border-radius:8px;cursor:pointer;}
 .testimonials-controls button:hover{background:#1ebe5d;}
 
-/* Floating WhatsApp Button + Animation + Ripple */
+/* Floating WhatsApp Button + Animation */
 #floatWA{
   position:fixed;
   bottom:20px;
@@ -184,6 +185,20 @@ card.innerHTML=`<div class="blog-image" style="order:${isEven?0:1}"><img src="${
 <div class="blog-text" style="order:${isEven?1:0}"><h3>${b.title}</h3><p>${b.content}</p><button class="cta-btn" onclick="goWA()">Learn More</button></div>`;
 blogContainer.appendChild(card);
 });
+
+// Animate blog on scroll
+function revealBlogs(){
+  const blogs = document.querySelectorAll('.blog-left-right');
+  const triggerBottom = window.innerHeight * 0.9;
+  blogs.forEach(blog=>{
+    const blogTop = blog.getBoundingClientRect().top;
+    if(blogTop < triggerBottom){
+      blog.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealBlogs);
+revealBlogs(); // trigger initially
 
 // Testimonials
 const customerNames = ["Alice","Bob","Charlie","Diana","Ethan","Fiona","George","Hannah","Ivan","Julia","Kevin","Laura"];
