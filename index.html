@@ -65,7 +65,7 @@ button:hover{background:#1ebe5d;}
 .testimonials-controls button{background:#25D366;color:#fff;border:none;padding:5px 12px;margin:0 5px;border-radius:8px;cursor:pointer;}
 .testimonials-controls button:hover{background:#1ebe5d;}
 
-/* Floating WhatsApp Button + Animation + 波纹 */
+/* Floating WhatsApp Button + Animation + Ripple */
 #floatWA{
   position:fixed;
   bottom:20px;
@@ -99,6 +99,7 @@ button:hover{background:#1ebe5d;}
 #floatWA:hover:after{opacity:1;transform:scale(1.2);}
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
+/* Responsive */
 @media(max-width:768px){.blog-left-right{flex-direction:column;}.blog-left-right img{width:100%;}.product-gallery{grid-template-columns:1fr;}.testimonial-card{flex:0 0 90%;}}
 </style>
 </head>
@@ -108,7 +109,7 @@ button:hover{background:#1ebe5d;}
 
 <div class="avatar">H</div>
 <h1>We Are a Factory with 15 Years of Experience 🥰</h1>
-<p>Our products include bags, shoes, clothes, watches and more 🤩 Click below to contact on WhatsApp!</p>
+<p>We produce bags, shoes, clothing, watches and more 🤩 Click below to contact us on WhatsApp!</p>
 <button id="waBtn">Contact via WhatsApp</button>
 
 <!-- Product Gallery -->
@@ -126,7 +127,7 @@ button:hover{background:#1ebe5d;}
 <div class="info-section">
 <h2>🚚 Shipping</h2>
 <ul>
-<li>Orders processed within 24 hours</li>
+<li>Orders are processed within 24 hours</li>
 <li>DHL / FedEx / UPS shipping</li>
 <li>Tracking number provided</li>
 </ul>
@@ -180,7 +181,7 @@ blogs.forEach((b,i)=>{
 const card=document.createElement('div');card.className='blog-left-right';
 const isEven=i%2===0;
 card.innerHTML=`<div class="blog-image" style="order:${isEven?0:1}"><img src="${b.img}"></div>
-<div class="blog-text" style="order:${isEven?1:0}"><h3>${b.title}</h3><p>${b.content}</p><button class="cta-btn" onclick="goWA()">了解更多</button></div>`;
+<div class="blog-text" style="order:${isEven?1:0}"><h3>${b.title}</h3><p>${b.content}</p><button class="cta-btn" onclick="goWA()">Learn More</button></div>`;
 blogContainer.appendChild(card);
 });
 
