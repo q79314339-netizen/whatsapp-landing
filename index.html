@@ -161,18 +161,19 @@ function setCookie(name,value,days){let d=new Date();d.setTime(d.getTime()+24*60
 let idx=getCookie("wa_idx");
 if(idx==null){idx=Math.floor(Math.random()*WA_POOL.length);setCookie("wa_idx",idx,365);}
 
-// ===== Open WA =====
+// ===== Open WA (修复跳转) =====
 function goWA(){
-let wa=WA_POOL[idx];
-fbq('track','Lead');
-let msg=encodeURIComponent("Hello, I'm interested in your products");
-window.location.href=wa.link+"?text="+msg;
+  let wa=WA_POOL[idx];
+  fbq('track','Lead');
+  let msg=encodeURIComponent("Hello, I'm interested in your products");
+  let url = wa.link + "?text=" + msg;
+  window.open(url, "_blank"); // 用新标签页打开
 }
 
 // ===== Product Click =====
 function productClick(name){
-fbq('track','ViewContent',{content_name:name});
-goWA();
+  fbq('track','ViewContent',{content_name:name});
+  goWA();
 }
 
 // ===== Online count =====
