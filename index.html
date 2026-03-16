@@ -1,147 +1,201 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Products Landing Page</title>
+<title>Luxury Bags & Watches Collection</title>
 
 <!-- Facebook Pixel -->
 <script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init','1558670776261744');
-fbq('track','PageView');
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '853640044397925');
+fbq('track', 'PageView');
 </script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=853640044397925&ev=PageView&noscript=1"/>
+</noscript>
 
 <style>
+/* ===== General ===== */
+body{font-family:'Arial',sans-serif;margin:0;padding:0;color:#111;background:#fff;}
+h1,h2,h3,h4{margin:0;color:#FFD700;}
+p{color:#333;line-height:1.6;}
+.container{max-width:1200px;margin:0 auto;padding:20px;}
+button{cursor:pointer;transition:0.3s;}
 
-body{
-font-family:Arial;
-background:#f6f6f6;
-margin:0;
-padding:0;
+/* ===== Hero Banner ===== */
+.hero{
+height:420px;
+background:url("https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-again--M25877_PM2_Front%20view.jpg") center/cover no-repeat;
+display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:white;
 }
+.hero h1{font-size:48px;font-weight:bold;text-shadow:2px 2px 10px rgba(0,0,0,0.5);}
+.hero p{font-size:18px;text-shadow:1px 1px 6px rgba(0,0,0,0.5);margin-top:10px;}
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
+/* ===== WhatsApp Button ===== */
+.wa-button-wrap{display:flex;align-items:center;gap:10px;margin-top:20px;}
+.wa-button-wrap button{background:#25D366;color:white;border:none;padding:12px 25px;border-radius:12px;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.wa-button-wrap button:hover{background:#1ebe5d;}
+#waBadge{background:#FFD700;color:#111;padding:4px 10px;border-radius:12px;font-size:13px;font-weight:bold;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
 
-h1{
-text-align:center;
-}
+/* ===== Product Section ===== */
+.product-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:50px 0;}
+.product-card{position:relative;overflow:hidden;border-radius:18px;background:#fff;transition:all 0.4s ease;}
+.product-card img{width:100%;height:420px;object-fit:cover;transition:transform 0.6s ease;}
+.product-card:hover img{transform:scale(1.12);}
+.product-overlay{position:absolute;bottom:0;left:0;width:100%;padding:25px;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);color:white;}
+.product-overlay h3{font-size:20px;font-weight:600;letter-spacing:1px;}
+.product-overlay p{margin:5px 0 15px;font-size:14px;opacity:0.8;}
+.product-overlay button{background:#FFD700;color:#111;border:none;padding:10px 20px;border-radius:30px;font-weight:bold;cursor:pointer;}
+.product-overlay button:hover{background:#ffbf00;}
+.product-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.2);}
 
-.product-gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-margin-top:30px;
-}
+/* ===== Blog Section ===== */
+.blog-grid{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-top:40px;}
+.blog-main{position:relative;border-radius:16px;overflow:hidden;}
+.blog-main img{width:100%;height:420px;object-fit:cover;}
+.blog-main-content{position:absolute;bottom:0;left:0;width:100%;padding:30px;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);color:white;}
+.blog-main-content h3{font-size:24px;}
+.blog-main-content button{margin-top:10px;background:#FFD700;border:none;padding:8px 18px;border-radius:20px;cursor:pointer;}
+.blog-side{display:flex;flex-direction:column;gap:20px;}
+.blog-small{display:flex;gap:15px;background:#fff;padding:10px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.blog-small img{width:120px;height:80px;object-fit:cover;border-radius:8px;}
+.blog-small h4{font-size:14px;margin:0;}
 
-.product-card{
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-cursor:pointer;
-transition:0.3s;
-}
+/* ===== Info Section ===== */
+.info-section{background:#f5f5f5;border-radius:12px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,0.03);margin:50px 0;}
+.info-section ul{margin:10px 0;padding-left:20px;}
 
-.product-card:hover{
-transform:translateY(-6px);
-}
+/* ===== Testimonials ===== */
+.testimonials-container{margin:50px 0;}
+.testimonials-track{display:flex;transition:transform 0.4s ease;}
+.testimonial-card{flex:0 0 80%;margin-right:15px;background:#fff;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.05);padding:15px;text-align:left;display:flex;align-items:center;gap:15px;}
+.testimonial-avatar{width:60px;height:60px;border-radius:50%;color:#fff;font-weight:bold;font-size:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.testimonial-card p{margin:0;font-size:14px;color:#333;}
+.testimonials-controls{text-align:center;margin-top:10px;}
+.testimonials-controls button{background:#FFD700;color:#111;border:none;padding:5px 12px;margin:0 5px;border-radius:8px;cursor:pointer;}
+.testimonials-controls button:hover{background:#ffbf00;}
 
-.product-card img{
-width:100%;
-}
+/* ===== Floating WhatsApp ===== */
+#floatWA{position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;animation:float 2s infinite;}
+#floatWA img{width:35px;height:35px;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
-.product-info{
-padding:15px;
-}
-
-.product-info h3{
-margin:0;
-}
-
-.wa-btn{
-background:#25D366;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:8px;
-font-weight:bold;
-margin-top:10px;
-cursor:pointer;
-}
-
-.wa-btn:hover{
-background:#1ebe5d;
-}
-
-#floatWA{
-position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
-height:60px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-box-shadow:0 6px 20px rgba(0,0,0,0.2);
-}
-
-#floatWA img{
-width:32px;
-}
-
+/* ===== Responsive ===== */
+@media(max-width:1024px){.product-gallery{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr;} .product-gallery{grid-template-columns:1fr;} .testimonial-card{flex:0 0 90%;}}
 </style>
 </head>
-
 <body>
+
+<!-- Hero -->
+<div class="hero">
+<h1>Luxury Bags & Watches</h1>
+<p>Premium Quality | Direct Factory Supply | Worldwide Shipping</p>
+<div class="wa-button-wrap">
+  <button id="waBtn">Contact via WhatsApp</button>
+  <span id="waBadge"></span>
+</div>
+</div>
 
 <div class="container">
 
-<h1>Luxury Bags Collection</h1>
-<p style="text-align:center">
-Contact us via WhatsApp for latest catalog and price
-</p>
-
+<!-- Product Section -->
+<h2>👜 Popular Products</h2>
 <div class="product-gallery">
-
-<div class="product-card" onclick="trackProduct('Neverfull MM')">
-<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-neverfull-mm--M46975_PM2_Front%20view.jpg">
-<div class="product-info">
+<div class="product-card">
+<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-neverfull-mm--M46975_PM2_Front%20view.jpg" alt="Neverfull MM">
+<div class="product-overlay">
 <h3>Neverfull MM</h3>
-<button class="wa-btn" onclick="trackProduct('Neverfull MM')">Contact via WhatsApp</button>
+<p>Iconic LV Tote Bag</p>
+<button onclick="trackProduct('Neverfull MM', this)">WhatsApp Inquiry</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_M/louis-vuitton-messenger-bag--M43895_PM2_Front%20view.jpg" alt="Messenger Bag">
+<div class="product-overlay">
+<h3>Messenger Bag</h3>
+<p>Luxury Men's Collection</p>
+<button onclick="trackProduct('Messenger Bag', this)">WhatsApp Inquiry</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_M/louis-vuitton-tambour-watch--Q1D010_PM2_Front%20view.jpg" alt="Tambour Watch">
+<div class="product-overlay">
+<h3>Tambour Watch</h3>
+<p>Swiss Precision</p>
+<button onclick="trackProduct('Tambour Watch', this)">WhatsApp Inquiry</button>
+</div>
 </div>
 </div>
 
-<div class="product-card" onclick="trackProduct('Again MM')">
+<!-- Blog Section -->
+<h2>📰 Latest Articles</h2>
+<div class="blog-grid">
+<div class="blog-main">
 <img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-again--M25877_PM2_Front%20view.jpg">
-<div class="product-info">
-<h3>Again MM</h3>
-<button class="wa-btn" onclick="trackProduct('Again MM')">Contact via WhatsApp</button>
+<div class="blog-main-content">
+<h3>How To Identify High Quality LV Bags</h3>
+<p>Learn expert tips to distinguish premium craftsmanship.</p>
+<button onclick="trackCTA('LV Guide')">Read Article</button>
+</div>
+</div>
+<div class="blog-side">
+<div class="blog-small">
+<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_M/louis-vuitton--N40604_PM2_Front%20view.jpg">
+<div>
+<h4>Top LV Bags 2025</h4>
+<p>Trending luxury handbags</p>
+</div>
+</div>
+<div class="blog-small">
+<img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-twist-mm--M50282_PM2_Front%20view.jpg">
+<div>
+<h4>Luxury Bag Care Guide</h4>
+<p>Keep your bags perfect</p>
+</div>
+</div>
 </div>
 </div>
 
+<!-- Info Section -->
+<div class="info-section">
+<h2>🚚 Shipping</h2>
+<ul>
+<li>Orders processed within 24 hours</li>
+<li>DHL / FedEx / UPS shipping</li>
+<li>Tracking number provided</li>
+</ul>
+<h2>💰 Payment</h2>
+<ul>
+<li>PayPal</li>
+<li>Western Union</li>
+<li>Bank Transfer</li>
+</ul>
+</div>
+
+<!-- Testimonials -->
+<div class="testimonials-container">
+<h2>🌟 Customer Testimonials</h2>
+<div class="testimonials-track" id="testimonialsTrack"></div>
+<div class="testimonials-controls">
+<button id="prevBtn">&#8592;</button>
+<button id="nextBtn">&#8594;</button>
+</div>
 </div>
 </div>
 
 <!-- Floating WhatsApp -->
-<div id="floatWA" onclick="goWA()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+<div id="floatWA">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </div>
 
 <script>
@@ -149,74 +203,73 @@ Contact us via WhatsApp for latest catalog and price
 const WA_POOL = [
   {name:"lewis", link:"https://wa.me/8619500182858", event:"WA_1"},
   {name:"lisa", link:"https://wa.me/8619748156826", event:"WA_2"},
-  {name:"Diana", link:"https://wa.me/8613489920964", event:"WA_3"}
+  {name:"Diana", link:"https://wa.me/8613489920964", event:"WA_6"}
 ];
-
-/* Cookie */
-
 function getCookie(name){
-const m=document.cookie.match(new RegExp('(^| )'+name+'=([^;]+)'));
-return m?m[2]:null;
+  const m=document.cookie.match(new RegExp('(^| )'+name+'=([^;]+)'));
+  return m ? parseInt(m[2]) : null;
+}
+function setCookie(name,value,days=365){
+  const d=new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  document.cookie = `${name}=${value};path=/;expires=${d.toUTCString()}`;
+}
+function assignWA(){
+  let waIndex = getCookie('wa_idx');
+  if(waIndex === null || isNaN(waIndex)){
+    // 第一次访问随机分配一个客服
+    waIndex = Math.floor(Math.random() * WA_POOL.length);
+    setCookie('wa_idx', waIndex, 365);
+  }
+  return waIndex;
+}
+let waIndex = assignWA();
+document.getElementById('waBadge').innerText = WA_POOL[waIndex].name;
+function goWA(){
+  const wa = WA_POOL[waIndex];
+  const eventId = 'evt_'+Date.now()+'_'+Math.random().toString(36).substr(2,6);
+  fbq('track','Lead',{customer_name: wa.name},{eventID: eventId});
+  fbq('track','Contact',{customer_name: wa.name},{eventID: eventId});
+  fbq('trackCustom', wa.event,{customer_name: wa.name},{eventID: eventId});
+  setTimeout(()=>{window.location.href=wa.link},350);
+}
+document.getElementById('waBtn').onclick = goWA;
+document.getElementById('floatWA').onclick = goWA;
+
+// ===== Product Tracking =====
+function trackProduct(name, el){
+  const eventId='evt_'+Date.now()+'_'+Math.random().toString(36).substr(2,6);
+  fbq('track','ViewContent',{content_name:name,content_type:'product',value:1,currency:'USD'},{eventID:eventId});
+  goWA();
 }
 
-function setCookie(name,value){
-document.cookie=name+"="+value+";path=/;max-age=2592000";
+// ===== Blog CTA =====
+function trackCTA(title){
+  const eventId='evt_'+Date.now()+'_'+Math.random().toString(36).substr(2,6);
+  fbq('track','Lead',{content_name:title},{eventID:eventId});
+  goWA();
 }
 
-/* 客服分配 */
-
-let waIndex=getCookie('wa_idx');
-
-if(waIndex===null){
-let lastIndex=parseInt(getCookie('last_assigned_idx'))||-1;
-waIndex=(lastIndex+1)%WA_POOL.length;
-setCookie('wa_idx',waIndex);
-setCookie('last_assigned_idx',waIndex);
-}
-
-/* 跳转 WhatsApp */
-
-function goWA(productName=""){
-
-const wa=WA_POOL[waIndex];
-
-const eventId='evt_'+Date.now();
-
-fbq('track','Lead',{customer:wa.name},{eventID:eventId});
-
-let message="Hello, I'm interested in your products.";
-
-if(productName){
-message="Hello, I'm interested in: "+productName;
-}
-
-window.location.href=wa.link+"?text="+encodeURIComponent(message);
-
-}
-
-/* 产品点击 */
-
-function trackProduct(name){
-
-const eventId='evt_'+Date.now();
-
-fbq('track','ViewContent',{
-content_name:name,
-content_type:'product'
-},{eventID:eventId});
-
-fbq('track','AddToCart',{
-content_name:name,
-value:1,
-currency:'USD'
+// ===== Testimonials =====
+const customerNames = ["Alice","Bob","Charlie","Diana","Ethan","Fiona","George","Hannah","Ivan","Julia","Kevin","Laura"];
+const allTestimonials = ["Great quality, fast delivery! Highly recommend.","Excellent service, very satisfied with my order.","Amazing products and very responsive WhatsApp support.","Products exceeded my expectations!","Very reliable supplier, smooth transaction.","Love the quality of the products, will order again.","Fast shipping and good communication.","Highly professional, very happy with my purchase"];
+function getRandomColor(){return "#"+Math.floor(Math.random()*16777215).toString(16);}
+function getRandomTestimonials(n){const shuffled=allTestimonials.sort(()=>0.5-Math.random());return shuffled.slice(0,n);}
+function getRandomName(){return customerNames[Math.floor(Math.random()*customerNames.length)];}
+const track=document.getElementById('testimonialsTrack');
+const testimonials=getRandomTestimonials(3);
+testimonials.forEach(text=>{
+  const name=getRandomName();const color1=getRandomColor();const color2=getRandomColor();
+  const div=document.createElement('div');div.className='testimonial-card';
+  div.innerHTML=`<div class="testimonial-avatar" style="background: linear-gradient(135deg, ${color1}, ${color2})">${name.charAt(0)}</div><p><strong>${name}:</strong> "${text}"</p>`;
+  track.appendChild(div);
 });
-
-goWA(name);
-
-}
-
+const cards=track.children;let index=0;
+function showSlide(i){track.style.transform=`translateX(-${i*85}%)`;}
+setInterval(()=>{index=(index+1)%cards.length;showSlide(index);},3000);
+document.getElementById('prevBtn').onclick=()=>{index=(index-1+cards.length)%cards.length;showSlide(index);};
+document.getElementById('nextBtn').onclick=()=>{index=(index+1)%cards.length;showSlide(index);};
 </script>
 
 </body>
 </html>
-```
