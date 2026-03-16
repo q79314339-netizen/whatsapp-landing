@@ -161,13 +161,27 @@ function setCookie(name,value,days){let d=new Date();d.setTime(d.getTime()+24*60
 let idx=getCookie("wa_idx");
 if(idx==null){idx=Math.floor(Math.random()*WA_POOL.length);setCookie("wa_idx",idx,365);}
 
-// ===== Open WA (修复跳转) =====
+// ===== Open WA (修复跳转 - 核心修改部分) =====
 function goWA(){
   let wa=WA_POOL[idx];
   fbq('track','Lead');
-  let msg=encodeURIComponent("Hello, I'm interested in your products");
-  let url = wa.link + "?text=" + msg;
-  window.open(url, "_blank"); // 用新标签页打开
+  // 修复1：正确拼接URL，确保参数格式正确
+  let msg = encodeURIComponent("Hello, I'm interested in your products");
+  let fullUrl = `${wa.link}?text=${msg}`;
+  
+  // 修复2：使用多种跳转方式确保兼容性
+  try {
+    // 方式1：优先尝试新窗口打开
+    window.open(fullUrl, '_blank');
+    
+    // 方式2：备用方案 - 当前窗口跳转（防止新窗口被拦截）
+    setTimeout(() => {
+      window.location.href = fullUrl;
+    }, 500);
+  } catch (e) {
+    // 方式3：最终兜底方案
+    window.location.href = fullUrl;
+  }
 }
 
 // ===== Product Click =====
