@@ -24,397 +24,180 @@ fbq('track', 'PageView');
 </script>
 
 <style>
+body{font-family:Arial,sans-serif;margin:0;background:#fff;color:#222;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+h1,h2{color:#d4af37;}
+button{cursor:pointer;transition:0.3s;}
+/* Hero */
+.hero{height:420px;background:url("https://images.unsplash.com/photo-1548036328-c9fa89d128fa") center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;text-align:center;}
+.hero h1{font-size:48px;text-shadow:2px 2px 8px rgba(0,0,0,0.5);}
+.hero button{margin-top:20px;background:#25D366;border:none;padding:14px 28px;border-radius:10px;color:white;font-size:16px;}
+.online{margin-top:8px;font-size:14px;text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
 
-body{
-font-family:Arial;
-margin:0;
-background:#fff;
-color:#222;
-}
+/* Trust */
+.trust{background:#f6f6f6;padding:40px 0;}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.trust-item{background:white;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.05);}
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+/* Products */
+.products{margin-top:40px;}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.product{border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.product img{width:100%;height:300px;object-fit:cover;}
+.product-info{padding:15px;text-align:center;}
+.product button{background:#d4af37;border:none;padding:10px 20px;border-radius:20px;}
 
-h1,h2{
-color:#d4af37;
-}
+/* Testimonials */
+.testimonials{background:#f6f6f6;margin-top:50px;padding:40px 0;overflow:hidden;position:relative;}
+.testimonials-track{display:flex;transition:transform 0.4s ease;}
+.testimonial-card{flex:0 0 80%;margin-right:20px;background:white;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.05);padding:15px;display:flex;align-items:center;gap:15px;}
+.testimonial-avatar{width:60px;height:60px;border-radius:50%;color:#fff;font-weight:bold;font-size:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.testimonial-card p{margin:0;font-size:14px;color:#333;}
+.testimonials-controls{text-align:center;margin-top:10px;}
+.testimonials-controls button{background:#d4af37;color:#111;border:none;padding:5px 12px;margin:0 5px;border-radius:8px;cursor:pointer;}
 
-button{
-cursor:pointer;
-}
+/* Info & FAQ */
+.info{margin-top:40px;}
+.faq{margin-top:40px;}
+.faq-item{margin-bottom:10px;}
 
-/* hero */
+/* Floating WA */
+#floatWA{position:fixed;right:20px;bottom:20px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;}
+#floatWA img{width:32px;}
 
-.hero{
-height:420px;
-background:url("https://images.unsplash.com/photo-1548036328-c9fa89d128fa") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-color:white;
-text-align:center;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.hero button{
-margin-top:20px;
-background:#25D366;
-border:none;
-padding:14px 28px;
-border-radius:10px;
-color:white;
-font-size:16px;
-}
-
-.online{
-margin-top:8px;
-font-size:14px;
-}
-
-/* trust */
-
-.trust{
-background:#f6f6f6;
-padding:40px 0;
-}
-
-.trust-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.trust-item{
-background:white;
-padding:20px;
-border-radius:10px;
-text-align:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* products */
-
-.products{
-margin-top:40px;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.product{
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.product img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-.product-info{
-padding:15px;
-text-align:center;
-}
-
-.product button{
-background:#d4af37;
-border:none;
-padding:10px 20px;
-border-radius:20px;
-}
-
-/* testimonials */
-
-.testimonials{
-background:#f6f6f6;
-margin-top:50px;
-padding:40px 0;
-}
-
-.testimonial-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-.testimonial{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* info */
-
-.info{
-margin-top:40px;
-}
-
-/* faq */
-
-.faq{
-margin-top:40px;
-}
-
-.faq-item{
-margin-bottom:10px;
-}
-
-/* floating WA */
-
-#floatWA{
-position:fixed;
-right:20px;
-bottom:20px;
-width:60px;
-height:60px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-#floatWA img{
-width:32px;
-}
-
-@media(max-width:768px){
-
-.product-grid{
-grid-template-columns:1fr;
-}
-
-.trust-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.testimonial-grid{
-grid-template-columns:1fr;
-}
-
-}
-
+/* Responsive */
+@media(max-width:1024px){.product-grid{grid-template-columns:1fr 1fr;}.trust-grid{grid-template-columns:1fr 1fr;}.testimonial-card{flex:0 0 90%;}}
+@media(max-width:768px){.product-grid{grid-template-columns:1fr;}.trust-grid{grid-template-columns:1fr 1fr;}.testimonial-card{flex:0 0 100%;}}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-
 <h1>Luxury Bags & Watches</h1>
 <p>Premium Quality | Worldwide Shipping</p>
-
 <button onclick="goWA()">Contact WhatsApp</button>
-
 <div class="online" id="onlineCount"></div>
-
 </div>
 
 <div class="container">
 
 <section class="trust">
-
 <h2>Why Choose Us</h2>
-
 <div class="trust-grid">
-
-<div class="trust-item">
-<h3>10,000+</h3>
-<p>Happy Customers</p>
+<div class="trust-item"><h3>10,000+</h3><p>Happy Customers</p></div>
+<div class="trust-item"><h3>Factory Direct</h3><p>Best Prices</p></div>
+<div class="trust-item"><h3>DHL / FedEx</h3><p>Fast Shipping</p></div>
+<div class="trust-item"><h3>24/7</h3><p>WhatsApp Support</p></div>
 </div>
-
-<div class="trust-item">
-<h3>Factory Direct</h3>
-<p>Best Prices</p>
-</div>
-
-<div class="trust-item">
-<h3>DHL / FedEx</h3>
-<p>Fast Shipping</p>
-</div>
-
-<div class="trust-item">
-<h3>24/7</h3>
-<p>WhatsApp Support</p>
-</div>
-
-</div>
-
 </section>
 
 <section class="products">
-
 <h2>Popular Products</h2>
-
 <div class="product-grid">
-
 <div class="product">
 <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e">
-<div class="product-info">
-<h3>Luxury Tote Bag</h3>
-<button onclick="productClick('Tote Bag')">WhatsApp Inquiry</button>
+<div class="product-info"><h3>Luxury Tote Bag</h3><button onclick="productClick('Tote Bag')">WhatsApp Inquiry</button></div>
 </div>
-</div>
-
 <div class="product">
 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
-<div class="product-info">
-<h3>Luxury Watch</h3>
-<button onclick="productClick('Watch')">WhatsApp Inquiry</button>
+<div class="product-info"><h3>Luxury Watch</h3><button onclick="productClick('Watch')">WhatsApp Inquiry</button></div>
 </div>
-</div>
-
 <div class="product">
 <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3">
-<div class="product-info">
-<h3>Designer Handbag</h3>
-<button onclick="productClick('Handbag')">WhatsApp Inquiry</button>
+<div class="product-info"><h3>Designer Handbag</h3><button onclick="productClick('Handbag')">WhatsApp Inquiry</button></div>
 </div>
 </div>
-
-</div>
-
 </section>
 
 <section class="testimonials">
-
 <h2>Customer Reviews</h2>
-
-<div class="testimonial-grid">
-
-<div class="testimonial">
-⭐⭐⭐⭐⭐  
-Great quality and fast delivery!
+<div class="testimonials-track" id="testimonialsTrack"></div>
+<div class="testimonials-controls">
+<button id="prevBtn">&#8592;</button>
+<button id="nextBtn">&#8594;</button>
 </div>
-
-<div class="testimonial">
-⭐⭐⭐⭐⭐  
-Customer service was excellent.
-</div>
-
-<div class="testimonial">
-⭐⭐⭐⭐⭐  
-Very happy with the bag quality.
-</div>
-
-</div>
-
 </section>
 
 <section class="info">
-
 <h2>Shipping & Payment</h2>
-
 <ul>
 <li>DHL / FedEx / UPS worldwide</li>
 <li>Tracking number provided</li>
 <li>Delivery 5-10 days</li>
 </ul>
-
 <h3>Payment</h3>
-
 <ul>
 <li>PayPal</li>
 <li>Bank Transfer</li>
 <li>Western Union</li>
 </ul>
-
 </section>
 
 <section class="faq">
-
 <h2>FAQ</h2>
-
 <div class="faq-item">Do you ship worldwide? — Yes</div>
 <div class="faq-item">How long delivery? — 5-10 days</div>
 <div class="faq-item">Tracking number? — Yes</div>
-
 </section>
 
 </div>
 
-<div id="floatWA" onclick="goWA()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-</div>
+<div id="floatWA" onclick="goWA()"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></div>
 
 <script>
-
-/* WhatsApp Pool */
-
+// ===== WhatsApp Pool =====
 const WA_POOL=[
 {name:"Sales1",link:"https://wa.me/8619500182858"},
 {name:"Sales2",link:"https://wa.me/8619748156826"},
 {name:"Sales3",link:"https://wa.me/8613489920964"}
 ];
 
-/* cookie */
+// ===== Cookie =====
+function getCookie(name){let m=document.cookie.match('(^|;) ?'+name+'=([^;]*)(;|$)');return m?m[2]:null;}
+function setCookie(name,value,days){let d=new Date();d.setTime(d.getTime()+24*60*60*1000*days);document.cookie=name+"="+value+";path=/;expires="+d.toGMTString();}
 
-function getCookie(name){
-let m=document.cookie.match('(^|;) ?'+name+'=([^;]*)(;|$)');
-return m?m[2]:null;
-}
-
-function setCookie(name,value,days){
-let d=new Date;
-d.setTime(d.getTime()+24*60*60*1000*days);
-document.cookie=name+"="+value+";path=/;expires="+d.toGMTString();
-}
-
-/* assign WA */
-
+// ===== Assign WA =====
 let idx=getCookie("wa_idx");
+if(idx==null){idx=Math.floor(Math.random()*WA_POOL.length);setCookie("wa_idx",idx,365);}
 
-if(idx==null){
-idx=Math.floor(Math.random()*WA_POOL.length);
-setCookie("wa_idx",idx,365);
-}
-
-/* open WA */
-
+// ===== Open WA =====
 function goWA(){
-
 let wa=WA_POOL[idx];
-
 fbq('track','Lead');
-
 let msg=encodeURIComponent("Hello, I'm interested in your products");
-
 window.location.href=wa.link+"?text="+msg;
-
 }
 
-/* product click */
-
+// ===== Product Click =====
 function productClick(name){
-
-fbq('track','ViewContent',{
-content_name:name
-});
-
+fbq('track','ViewContent',{content_name:name});
 goWA();
-
 }
 
-/* online count */
-
+// ===== Online count =====
 let n=Math.floor(Math.random()*20)+15;
+document.getElementById("onlineCount").innerText="🔥 "+n+" people are chatting on WhatsApp now";
 
-document.getElementById("onlineCount").innerText=
-"🔥 "+n+" people are chatting on WhatsApp now";
-
+// ===== Testimonials =====
+const customerNames = ["Alice","Bob","Charlie","Diana","Ethan","Fiona","George","Hannah","Ivan","Julia","Kevin","Laura"];
+const allTestimonials = ["Great quality, fast delivery! Highly recommend.","Excellent service, very satisfied with my order.","Amazing products and very responsive WhatsApp support.","Products exceeded expectations!","Very reliable supplier, smooth transaction.","Love the quality of the products, will order again.","Fast shipping and good communication.","Highly professional, very happy with purchase"];
+function getRandomColor(){return "#"+Math.floor(Math.random()*16777215).toString(16);}
+function getRandomTestimonials(n){const shuffled=allTestimonials.sort(()=>0.5-Math.random());return shuffled.slice(0,n);}
+function getRandomName(){return customerNames[Math.floor(Math.random()*customerNames.length)];}
+const track=document.getElementById('testimonialsTrack');
+const testimonials=getRandomTestimonials(3);
+testimonials.forEach(text=>{
+  const name=getRandomName();const color1=getRandomColor();const color2=getRandomColor();
+  const div=document.createElement('div');div.className='testimonial-card';
+  div.innerHTML=`<div class="testimonial-avatar" style="background: linear-gradient(135deg, ${color1}, ${color2})">${name.charAt(0)}</div><p><strong>${name}:</strong> "${text}"</p>`;
+  track.appendChild(div);
+});
+const cards=track.children;let index=0;
+function showSlide(i){track.style.transform=`translateX(-${i*85}%)`;}
+setInterval(()=>{index=(index+1)%cards.length;showSlide(index);},3000);
+document.getElementById('prevBtn').onclick=()=>{index=(index-1+cards.length)%cards.length;showSlide(index);};
+document.getElementById('nextBtn').onclick=()=>{index=(index+1)%cards.length;showSlide(index);};
 </script>
 
 </body>
